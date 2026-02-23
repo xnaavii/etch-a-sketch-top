@@ -6,7 +6,9 @@ container.classList.add('container');
 document.body.appendChild(container);
 
 // TODO: Create a square
-const square = document.createElement("div");
+const square = document.createElement('div');
+container.append(square);
+square.classList.add('square');
 // TODO: Add a square to the container
 // TODO: Add style to square
 // TODO: Add enough number of squares and
