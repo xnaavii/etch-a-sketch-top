@@ -5,7 +5,7 @@ const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-const numberOfSquares = 16 * 2;
+const numberOfSquares = 16 * 16;
 createSquares(container, numberOfSquares);
 
 // TODO: Add enough number of squares and
