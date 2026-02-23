@@ -1,15 +1,28 @@
 // Add a 16x16 Grid
-// TODO: Display a container
+// Display a container
 // Grid container
 const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-// TODO: Create a square
-const square = document.createElement('div');
-container.append(square);
-square.classList.add('square');
-// TODO: Add a square to the container
-// TODO: Add style to square
+const numberOfSquares = 16 * 2;
+createSquares(container, numberOfSquares);
+
 // TODO: Add enough number of squares and
 // TODO: ensure it's 16x16 grid
+
+function createSquares(container, numOfSquares) {
+  if (numOfSquares === 0) {
+    console.log('Number of squares must be greater than zero.');
+    return;
+  }
+
+  for (let i = 0; i < numOfSquares; i++) {
+    // Create a square
+    const square = document.createElement('div');
+    // Add a square to the container
+    container.append(square);
+    // Add style to square
+    square.classList.add('square');
+  }
+}

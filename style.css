@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.container {
+  border: 1px solid red;
+  display: flex;
+  width: 1000px;
+  height: 1000px;
+}
+
 .square {
   width: 100px;
   height: 100px;
