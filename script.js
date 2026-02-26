@@ -7,7 +7,9 @@ const numberOfSquares = 16;
 // Create a 16x16 grid
 createSquares(container, numberOfSquares);
 
-function createSquares(container, numOfSquares) {
+// 
+
+function createSquares(container, numOfSquares = 16) {
   if (numOfSquares === 0) {
     console.log('Number of squares must be greater than zero.');
     return;
