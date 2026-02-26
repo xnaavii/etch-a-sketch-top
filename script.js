@@ -11,12 +11,26 @@ createSquares(container, numberOfSquares);
 const squares = document.querySelectorAll('.square');
 
 // Attach an event listener to each square
-// TODO: Change their background color randomly
 squares.forEach((square) => {
   square.addEventListener('mouseover', (e) => {
-    console.log(e);
+    const element = e.currentTarget;
+    // Sets background to random RBG values
+    element.style.backgroundColor = getRandomRGB();
   });
 });
+
+function getRandomRGB() {
+  // Gets random number 0 - 255
+  const getRandomNumber = () => Math.floor(Math.random() * 255);
+
+  // Get random color values
+  const red = getRandomNumber();
+  const green = getRandomNumber();
+  const blue = getRandomNumber();
+
+  // Returns css value e.g. rgb(0, 23, 255)
+  return `rgb(${red}, ${green}, ${blue})`;
+}
 
 function createSquares(container, numOfSquares = 16) {
   if (numOfSquares === 0) {
