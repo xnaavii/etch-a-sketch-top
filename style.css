@@ -17,6 +17,10 @@ body {
   width: 100vw;
 }
 
+button {
+  padding: 8px;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
