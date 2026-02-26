@@ -3,7 +3,7 @@ const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-const numberOfSquares = 16 * 16;
+const numberOfSquares = 16;
 // Create a 16x16 grid
 createSquares(container, numberOfSquares);
 
@@ -13,7 +13,9 @@ function createSquares(container, numOfSquares) {
     return;
   }
 
-  for (let i = 0; i < numOfSquares; i++) {
+  const totalSquares = numOfSquares * numOfSquares;
+
+  for (let i = 0; i < totalSquares; i++) {
     // Create a square
     const square = document.createElement('div');
     // Add a square to the container
