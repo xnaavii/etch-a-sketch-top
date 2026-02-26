@@ -7,7 +7,16 @@ const numberOfSquares = 16;
 // Create a 16x16 grid
 createSquares(container, numberOfSquares);
 
-// 
+// Select all squares
+const squares = document.querySelectorAll('.square');
+
+// Attach an event listener to each square
+// TODO: Change their background color randomly
+squares.forEach((square) => {
+  square.addEventListener('mouseover', (e) => {
+    console.log(e);
+  });
+});
 
 function createSquares(container, numOfSquares = 16) {
   if (numOfSquares === 0) {
