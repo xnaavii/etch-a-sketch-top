@@ -1,15 +1,19 @@
+let numberOfSquares = 16;
+// Button on top
+const button = document.createElement('button');
+button.textContent = 'Change number of squares';
+document.body.appendChild(button);
+
 // Grid container
 const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-const numberOfSquares = 16;
 // Create a 16x16 grid
 createSquares(container, numberOfSquares);
 
 // Select all squares
 const squares = document.querySelectorAll('.square');
-
 // Attach an event listener to each square
 squares.forEach((square) => {
   square.addEventListener('mouseover', (e) => {
