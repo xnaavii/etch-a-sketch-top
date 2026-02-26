@@ -14,6 +14,13 @@ function createSquares(container, numOfSquares) {
   }
 
   const totalSquares = numOfSquares * numOfSquares;
+  // Changes Flex's item flex-basis
+  // flex-basis calc(100% / var(--num-of-squares))
+  // Sets --num-of-squares to numOfSquares and recalculates
+  document.documentElement.style.setProperty(
+    '--num-of-squares',
+    `${numOfSquares}`,
+  );
 
   for (let i = 0; i < totalSquares; i++) {
     // Create a square
