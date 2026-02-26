@@ -26,5 +26,5 @@ body {
 .square {
   flex: 0 1 calc(100% / var(--num-of-squares));
   aspect-ratio: 1 / 1;
-  border: 1px solid red;
+  border: 1px solid black;
 }
