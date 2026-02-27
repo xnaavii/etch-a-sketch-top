@@ -4,6 +4,11 @@ const button = document.createElement('button');
 button.textContent = 'Change number of squares';
 document.body.appendChild(button);
 
+button.addEventListener('click', () => {
+  const numOfSquares = prompt('Change total number of squares 0 - 100');
+  console.log(numOfSquares);
+});
+
 // Grid container
 const container = document.createElement('div');
 container.classList.add('container');
