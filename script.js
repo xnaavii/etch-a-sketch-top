@@ -4,15 +4,22 @@ const button = document.createElement('button');
 button.textContent = 'Change number of squares';
 document.body.appendChild(button);
 
-button.addEventListener('click', () => {
-  const numOfSquares = prompt('Change total number of squares 0 - 100');
-  console.log(numOfSquares);
-});
-
 // Grid container
 const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
+
+button.addEventListener('click', () => {
+  const numOfSquares = prompt('Change total number of squares 0 - 100');
+  const squares = document.body.querySelectorAll('.square');
+  if (squares) {
+    squares.forEach((square) => {
+      container.removeChild(square);
+    });
+  }
+  createSquares(container, numOfSquares);
+  console.log(numOfSquares);
+});
 
 // Create a 16x16 grid
 createSquares(container, numberOfSquares);
