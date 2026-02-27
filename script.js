@@ -9,15 +9,20 @@ const container = document.createElement('div');
 container.classList.add('container');
 document.body.appendChild(container);
 
-button.addEventListener('click', () => {
-  const numOfSquares = prompt('Change total number of squares 0 - 100');
-
-  removeSquares();
-  createSquares(container, numOfSquares);
-});
-
 // Create a 16x16 grid
 createSquares(container, numberOfSquares);
+
+button.addEventListener('click', () => {
+  numberOfSquares = Number(prompt('Change total number of squares 0 - 100'));
+  if (numberOfSquares > 100) {
+    return alert('Max number of squares is 100.');
+  } else if (numberOfSquares < 0) {
+    return alert('Number of squares has to be greater than zero.');
+  }
+
+  removeSquares();
+  createSquares(container, numberOfSquares);
+});
 
 function removeSquares() {
   // Selects squares and removes them
