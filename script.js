@@ -75,10 +75,20 @@ function createSquares(container, numOfSquares = 16) {
   const squares = document.querySelectorAll('.square');
   // Attach an event listener to each square
   squares.forEach((square) => {
+    let opacity = 10;
     square.addEventListener('mouseover', (e) => {
       const element = e.currentTarget;
       // Sets background to random RBG values
+
       element.style.backgroundColor = getRandomRGB();
+
+      // Increase opacity on each transition
+      // Start with 10% and gradually increase it
+      element.style.opacity = `${opacity}%`;
+
+      if (opacity !== 100) {
+        opacity += 10;
+      }
     });
   });
 }
