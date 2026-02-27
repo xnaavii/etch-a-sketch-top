@@ -11,29 +11,23 @@ document.body.appendChild(container);
 
 button.addEventListener('click', () => {
   const numOfSquares = prompt('Change total number of squares 0 - 100');
+
+  removeSquares();
+  createSquares(container, numOfSquares);
+});
+
+// Create a 16x16 grid
+createSquares(container, numberOfSquares);
+
+function removeSquares() {
+  // Selects squares and removes them
   const squares = document.body.querySelectorAll('.square');
   if (squares) {
     squares.forEach((square) => {
       container.removeChild(square);
     });
   }
-  createSquares(container, numOfSquares);
-  console.log(numOfSquares);
-});
-
-// Create a 16x16 grid
-createSquares(container, numberOfSquares);
-
-// Select all squares
-const squares = document.querySelectorAll('.square');
-// Attach an event listener to each square
-squares.forEach((square) => {
-  square.addEventListener('mouseover', (e) => {
-    const element = e.currentTarget;
-    // Sets background to random RBG values
-    element.style.backgroundColor = getRandomRGB();
-  });
-});
+}
 
 function getRandomRGB() {
   // Gets random number 0 - 255
@@ -71,4 +65,15 @@ function createSquares(container, numOfSquares = 16) {
     // Add style to square
     square.classList.add('square');
   }
+
+  // Select all squares
+  const squares = document.querySelectorAll('.square');
+  // Attach an event listener to each square
+  squares.forEach((square) => {
+    square.addEventListener('mouseover', (e) => {
+      const element = e.currentTarget;
+      // Sets background to random RBG values
+      element.style.backgroundColor = getRandomRGB();
+    });
+  });
 }
